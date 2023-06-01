@@ -25,7 +25,7 @@ TODO: screenshot
 - `@angular/cli` - [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 
 #### Dependencies
--
+- `@angular/material`
 
 #### Dev Dependencies
 -
