@@ -8,7 +8,7 @@ import { catchError, map } from 'rxjs/operators';
 // https://github.com/EllyPirelly/cf-movie-api/blob/main/index.js
 // https://github.com/EllyPirelly/cf-movie-api/blob/main/auth.js
 
-const apiUrl = 'YOUR_HOSTED_API_URL_HERE/';
+const apiUrl = 'https://movie-pool.onrender.com/';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,6 @@ export class FetchApiDataService {
   // post a user / registration
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
-
     return this.http.post(apiUrl + 'users', userDetails).pipe(
       catchError(this.handleError)
     );
@@ -31,8 +30,6 @@ export class FetchApiDataService {
 
   // post user / log in
   public userLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
-
     return this.http.post(apiUrl + 'login', userDetails).pipe(
       catchError(this.handleError)
     );
@@ -190,7 +187,7 @@ export class FetchApiDataService {
           Authorization: 'Bearer ' + token,
         })
     }).pipe(
-      map(this.extractResponseData),
+      // map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
@@ -212,7 +209,7 @@ export class FetchApiDataService {
   }
 
   // non-typed response extraction
-  private extractResponseData(res: Response): any {
+  private extractResponseData(res: any): any {
     const body = res;
     return body || {};
   }
