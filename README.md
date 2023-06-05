@@ -29,6 +29,7 @@ TODO: screenshot
 
 #### Dev Dependencies
 - `@angular/cli` and all packages coming with this
+- `angular-cli-ghpages` - to deploy on GitHub pages branch `gh-pages`
 
 ## How to run this?
 - clone the repo
