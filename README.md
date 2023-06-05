@@ -28,7 +28,7 @@ TODO: screenshot
 - `@angular/material`
 
 #### Dev Dependencies
--
+- `@angular/cli` and all packages coming with this
 
 ## How to run this?
 - clone the repo
