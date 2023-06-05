@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FetchApiDataService } from '../fetch-api-data.service';
@@ -8,6 +9,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
   templateUrl: './user-login-form.component.html',
   styleUrls: ['./user-login-form.component.scss']
 })
+
 export class UserLoginFormComponent implements OnInit {
   // defines the components input
   @Input() userData = {
@@ -20,7 +22,9 @@ export class UserLoginFormComponent implements OnInit {
     // modal, toggled at success/no success
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     // user notification
-    public snackBar: MatSnackBar) { }
+    public snackBar: MatSnackBar,
+    private router: Router
+  ) { }
 
   // is called once the component has recieved all its inputs
   ngOnInit(): void {
@@ -41,11 +45,15 @@ export class UserLoginFormComponent implements OnInit {
         duration: 6000
       });
 
+      // once login was successful, navigate to movies
+      this.router.navigate(['movies']);
+
     }, (response) => {
       console.log(response);
       this.snackBar.open(response, 'OK', {
         duration: 2000
       });
+
     });
   }
 }
