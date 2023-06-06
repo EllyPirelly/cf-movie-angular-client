@@ -1,0 +1,43 @@
+.user-profile {
+  color: #282828;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  max-width: 640px;
+
+  & .user-profile-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media screen and (min-width: 640px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    & mat-form-field {
+      @media screen and (min-width: 640px) {
+        width: 48%;
+      }
+    }
+  }
+
+  & button {
+    background-color: #198754;
+    color: #fff;
+  }
+
+  & button:not(:last-of-type) {
+    margin-right: 1rem;
+  }
+
+  & .btn-delete {
+    background-color: #ff0000;
+  }
+
+  & .btn-close {
+    background-color: #3f51b5;
+    color: #fff;
+  }
+}

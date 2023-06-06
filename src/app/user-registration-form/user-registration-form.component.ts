@@ -50,24 +50,4 @@ export class UserRegistrationFormComponent implements OnInit {
       });
     });
   }
-
-  // auto-generated code - looks different to what is shown in CF course
-  // TODO: check, which code is correct
-  // registerUser(): void {
-  //   this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
-  //     // Logic for a successful user registration goes here! (To be implemented)
-
-  //     // closes modal on success
-  //     this.dialogRef.close();
-
-  //     this.snackBar.open(result, 'OK', {
-  //       duration: 2000
-  //     });
-
-  //   }, (result) => {
-  //     this.snackBar.open(result, 'OK', {
-  //       duration: 2000
-  //     });
-  //   });
-  // }
 }

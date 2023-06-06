@@ -4,8 +4,8 @@
   justify-content: space-between;
 
   & a {
-    text-decoration: none;
     color: #ffffffa6;
+    text-decoration: none;
   }
 
   & a:hover,
@@ -20,9 +20,9 @@
     padding: 6px;
 
     & a {
+      align-items: center;
       color: #282828;
       display: flex;
-      align-items: center;
     }
   }
 
@@ -32,7 +32,10 @@
     width: 2rem;
   }
 
-  & .main-nav-links a:first-of-type {
-    margin-right: 1rem;
+  & .main-nav-links {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 138px;
   }
 }
