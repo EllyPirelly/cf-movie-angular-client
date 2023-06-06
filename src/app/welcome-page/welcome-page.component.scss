@@ -1,0 +1,14 @@
+.main-page {
+  background-color: rgba(33, 37, 41, .5);
+  max-width: 720px;
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 2rem;
+
+  & button {
+    background-color: #198754;
+    margin-top: 2rem;
+  }
+}

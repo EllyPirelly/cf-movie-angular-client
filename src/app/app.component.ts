@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,16 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'cf-movie-angular-client';
+
+  constructor(
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+  }
+
+  logOut(): void {
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
 }

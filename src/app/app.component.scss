@@ -1,0 +1,38 @@
+.main-nav {
+  display: flex;
+  background-color: #6f1341;
+  justify-content: space-between;
+
+  & a {
+    text-decoration: none;
+    color: #ffffffa6;
+  }
+
+  & a:hover,
+  & a:active {
+    color: #ed6e2d;
+  }
+
+  & .main-nav-home {
+    color: #282828;
+    background-color: #ffffffa6;
+    border-radius: 8px;
+    padding: 6px;
+
+    & a {
+      color: #282828;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  & .svg-moviepool {
+    height: 2rem;
+    margin-right: .25rem;
+    width: 2rem;
+  }
+
+  & .main-nav-links a:first-of-type {
+    margin-right: 1rem;
+  }
+}
