@@ -54,3 +54,8 @@ img {
   width: 100%;
   height: auto;
 }
+
+// TODO: figure out how to overwrite overlayssss
+.cdk-overlay-pane {
+  max-width: 600px;
+}

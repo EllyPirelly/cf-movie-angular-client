@@ -1,7 +1,14 @@
 .main-nav {
-  display: flex;
   background-color: #6f1341;
-  justify-content: space-between;
+
+  & .main-nav-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
 
   & a {
     color: #ffffffa6;
