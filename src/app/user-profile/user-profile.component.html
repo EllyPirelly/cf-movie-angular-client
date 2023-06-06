@@ -1,0 +1,56 @@
+<div>
+  <h2>User Profile</h2>
+
+  <!-- user info -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Your registration details:</mat-card-title>
+      <mat-card-subtitle>Current User Info</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div>Your name: {{user.userName}}</div>
+      <div>Your email: {{user.email}}</div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- info update plus button -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Update your information here:</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form>
+        <mat-form-field>
+          <input matInput [(ngModel)]="updatedUser.userName" placeholder="Username" type="text" name="Username"
+            required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="updatedUser.password" placeholder="Password" type="password" name="Password"
+            required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="updatedUser.email" placeholder="Email" type="email" name="Email" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="updatedUser.birthDate" placeholder="Birthday" type="date" name="Birthday"
+            required>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button (click)="updateProfile()" color="primary">
+        Update User Info
+      </button>
+      <button mat-raised-button (click)="deleteUser()" color="primary">
+        Delete your account
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
