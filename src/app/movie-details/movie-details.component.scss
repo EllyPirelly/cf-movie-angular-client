@@ -1,0 +1,11 @@
+.mat-card--movie-details {
+  & .movie-details-head {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  & img,
+  & .movie-details-titleinfo {
+    width: 50%;
+  }
+}

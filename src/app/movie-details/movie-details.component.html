@@ -1,32 +1,33 @@
 <div class="mat-card--movie-details">
-  <mat-card>
+  <mat-card *ngFor="let movie of movies;">
     <mat-card-content>
-      <div>
-        <img src="https://media-cache.cinematerial.com/p/500x/wdep10n0/forrest-gump-movie-poster.jpg" alt="" />
-        <div>
-          <mat-card-title>movie.title</mat-card-title>
+      <div class="movie-details-head">
+        <img src={{movie.imagePath}} alt={{movie.title}} />
+
+        <div class="movie-details-titleinfo">
+          <mat-card-title>{{movie.title}}</mat-card-title>
           <h2>Plot</h2>
-          <p>movie.description</p>
+          <p>{{movie.description}}</p>
         </div>
       </div>
 
-      <div>
+      <div class="movie-details-body">
         <h4>Director</h4>
-        <p>movie.director.directorName</p>
+        <p>{{movie.director.directorName}}</p>
 
-        <h4>More details about directorName</h4>
-        <p>movie.director.bio</p>
+        <h4>More details about {{movie.directorName}}</h4>
+        <p>{{movie.director.bio}}</p>
 
         <h4>Genre</h4>
-        <p>movie.genre.genreName</p>
+        <p>{{movie.genre.genreName}}</p>
 
-        <h4>More details about the genre movie.genre.genreName</h4>
-        <p>movie.genre.description</p>
+        <h4>More details about the genre {{movie.genre.genreName}}</h4>
+        <p>{{movie.genre.description}}</p>
       </div>
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" mat-dialog-close>
         Close
       </button>
     </mat-card-actions>

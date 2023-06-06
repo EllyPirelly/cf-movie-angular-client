@@ -8,15 +8,15 @@
     <img src={{movie.imagePath}} alt={{movie.title}} />
 
     <mat-card-actions>
-      <button mat-button color="primary">
-        Summary
+      <button mat-button (click)="openMovieDetails()" style="margin-right: 10px;" color="primary">
+        Details
       </button>
 
-      <button mat-button color="primary">
+      <button mat-button (click)="openDirector()" style="margin-right: 10px;" color="primary">
         Director
       </button>
 
-      <button mat-button color="primary">
+      <button mat-button (click)="openGenre()" color="primary">
         Genre
       </button>
 

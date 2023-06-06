@@ -1,17 +1,17 @@
 <div class="mat-card--movie-genre">
   <h2>Genre</h2>
 
-  <mat-card>
+  <mat-card *ngFor="let movie of movies;">
     <mat-card-header>
-      <mat-card-title>movie.genre.genreName</mat-card-title>
+      <mat-card-title>{{movie.genre.genreName}}</mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
-      movie.genre.description
+      {{movie.genre.description}}
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" mat-dialog-close>
         Close
       </button>
     </mat-card-actions>
