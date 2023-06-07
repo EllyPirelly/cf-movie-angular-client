@@ -4,7 +4,6 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-card',
@@ -20,7 +19,6 @@ export class MovieCardComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
-    private router: Router
   ) { }
 
   // lifecycle hook; is called when Angular is done creating the component
@@ -34,18 +32,18 @@ export class MovieCardComponent implements OnInit {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
       console.log(this.movies);
-      this.getFavoriteMoviesList();
+      // this.getFavoriteMoviesList();
       return this.movies;
     });
   }
 
-  getFavoriteMoviesList(): void {
-    this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
-      this.favorites = resp.favoriteMovies;
-      console.log(this.favorites);
-      return this.favorites;
-    });
-  }
+  // getFavoriteMoviesList(): void {
+  //   this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
+  //     this.favorites = resp.favoriteMovies;
+  //     console.log(this.favorites);
+  //     return this.favorites;
+  //   });
+  // }
 
   openMovieDetails(
     imagePath: any,
