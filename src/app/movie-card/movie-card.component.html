@@ -11,8 +11,10 @@
       <button mat-button (click)="openMovieDetails(
         movie.imagePath,
         movie.title,
-        movie.description
-      )">
+        movie.description,
+        movie.director.directorName,
+        movie.director.bio
+        )">
         Details
       </button>
 

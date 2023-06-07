@@ -50,13 +50,17 @@ export class MovieCardComponent implements OnInit {
   openMovieDetails(
     imagePath: any,
     title: string,
-    description: string
+    description: string,
+    directorName: string,
+    bio: string
   ): void {
     this.dialog.open(MovieDetailsComponent, {
       data: {
         imagePath: imagePath,
         title: title,
-        description: description
+        description: description,
+        directorName: directorName,
+        bio: bio
       },
       width: '100%'
     });

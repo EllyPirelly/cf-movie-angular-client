@@ -1,28 +1,21 @@
 <div class="movie-details">
-  <mat-card *ngFor="let movie of movies;">
+  <mat-card>
     <mat-card-content>
       <div class="movie-details-head">
-        <img src={{movie.imagePath}} alt={{movie.title}} />
+        <img src={{data.imagePath}} alt={{data.title}} />
 
         <div class="movie-details-titleinfo">
-          <mat-card-title>{{movie.title}}</mat-card-title>
+          <mat-card-title>{{data.title}}</mat-card-title>
           <h2>Plot</h2>
-          <p>{{movie.description}}</p>
+          <p>{{data.description}}</p>
         </div>
       </div>
 
       <div class="movie-details-body">
         <h4>Director</h4>
-        <p>{{movie.director.directorName}}</p>
-
-        <h4>More details about {{movie.directorName}}</h4>
-        <p>{{movie.director.bio}}</p>
-
-        <h4>Genre</h4>
-        <p>{{movie.genre.genreName}}</p>
-
-        <h4>More details about the genre {{movie.genre.genreName}}</h4>
-        <p>{{movie.genre.description}}</p>
+        <p>{{data.directorName}}</p>
+        <h4>Bio</h4>
+        <p>{{data.bio}}</p>
       </div>
     </mat-card-content>
 
