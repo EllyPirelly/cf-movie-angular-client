@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FetchApiDataService } from '../fetch-api-data.service';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+// import { FetchApiDataService } from '../fetch-api-data.service';
 
 @Component({
   selector: 'app-director-view',
@@ -7,23 +8,12 @@ import { FetchApiDataService } from '../fetch-api-data.service';
   styleUrls: ['./director-view.component.scss']
 })
 
-export class DirectorViewComponent implements OnInit {
-
-  movies: any[] = [];
-
+export class DirectorViewComponent {
   constructor(
-    public fetchApiData: FetchApiDataService,
+    @Inject(MAT_DIALOG_DATA)
+    public data: {
+      directorName: string;
+      bio: string;
+    }
   ) { }
-
-  ngOnInit(): void {
-    this.getMovies();
-  }
-
-  getMovies(): void {
-    this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-      this.movies = resp;
-      console.log(this.movies);
-      return this.movies;
-    });
-  }
 }

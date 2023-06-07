@@ -47,7 +47,7 @@ export class FetchApiDataService {
     return this.http
       .post(`${apiUrl}/users/${userName}/movies/${movieId}`,
         {
-          FavoriteMovies: movieId
+          favoriteMovies: movieId
         },
         {
           headers: new HttpHeaders(
@@ -113,7 +113,6 @@ export class FetchApiDataService {
   }
 
   // get favorite movies for a user
-  // dunno what to make of this as we do not have a dedicated endpoint to display only favorite movies, so this needs to be the general user by userName?
   getFavoriteMovies(): Observable<any> {
     const userName = localStorage.getItem('userName');
     const token = localStorage.getItem('token');
@@ -127,7 +126,7 @@ export class FetchApiDataService {
       })
       .pipe(
         map(this.extractResponseData),
-        map((data) => data.FavoriteMovies),
+        map((data) => data.favoriteMovies),
         catchError(this.handleError)
       );
   }

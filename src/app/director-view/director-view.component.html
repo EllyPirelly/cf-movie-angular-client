@@ -1,11 +1,13 @@
 <div class="movie-director">
-  <mat-card *ngFor="let movie of movies;">
+  <mat-card>
     <mat-card-header class="movie-director-head">
-      <mat-card-title>Director: {{movie.director.directorName}}</mat-card-title>
+      <!-- <mat-card-title>Director: {{movie.director.directorName}}</mat-card-title> -->
+      <mat-card-title>Director: {{data.directorName}}</mat-card-title>
     </mat-card-header>
 
     <mat-card-content class="movie-director-body">
-      {{movie.director.bio}}
+      <!-- {{movie.director.bio}} -->
+      {{data.bio}}
     </mat-card-content>
 
     <mat-card-actions>
