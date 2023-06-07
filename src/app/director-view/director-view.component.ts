@@ -1,6 +1,5 @@
-import { Component, Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-// import { FetchApiDataService } from '../fetch-api-data.service';
 
 @Component({
   selector: 'app-director-view',
@@ -8,7 +7,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./director-view.component.scss']
 })
 
-export class DirectorViewComponent {
+export class DirectorViewComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
@@ -16,4 +15,6 @@ export class DirectorViewComponent {
       bio: string;
     }
   ) { }
+
+  ngOnInit(): void { }
 }

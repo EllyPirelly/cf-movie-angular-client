@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FetchApiDataService } from '../fetch-api-data.service';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-genre-view',
@@ -8,22 +8,13 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 
 export class GenreViewComponent implements OnInit {
-
-  movies: any[] = [];
-
   constructor(
-    public fetchApiData: FetchApiDataService,
+    @Inject(MAT_DIALOG_DATA)
+    public data: {
+      genreName: string;
+      description: string;
+    }
   ) { }
 
-  ngOnInit(): void {
-    this.getMovies();
-  }
-
-  getMovies(): void {
-    this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-      this.movies = resp;
-      console.log(this.movies);
-      return this.movies;
-    });
-  }
+  ngOnInit(): void { }
 }

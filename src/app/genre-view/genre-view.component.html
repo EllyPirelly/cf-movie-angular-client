@@ -1,11 +1,11 @@
 <div class="movie-genre">
-  <mat-card *ngFor="let movie of movies;">
+  <mat-card>
     <mat-card-header>
-      <mat-card-title>Genre: {{movie.genre.genreName}}</mat-card-title>
+      <mat-card-title>Genre: {{data.genreName}}</mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
-      {{movie.genre.description}}
+      {{data.description}}
     </mat-card-content>
 
     <mat-card-actions>

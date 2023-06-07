@@ -4,6 +4,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-card',
@@ -14,10 +15,12 @@ import { GenreViewComponent } from '../genre-view/genre-view.component';
 export class MovieCardComponent implements OnInit {
 
   movies: any[] = [];
+  favorites: any[] = [];
 
   constructor(
     public fetchApiData: FetchApiDataService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router
   ) { }
 
   // lifecycle hook; is called when Angular is done creating the component
@@ -27,29 +30,69 @@ export class MovieCardComponent implements OnInit {
     this.getMovies();
   }
 
-  openMovieDetails(): void {
-    this.dialog.open(MovieDetailsComponent, {
-      width: '100%'
-    });
-  }
-
-  openDirector(): void {
-    this.dialog.open(DirectorViewComponent, {
-      width: '100%'
-    });
-  }
-
-  openGenre(): void {
-    this.dialog.open(GenreViewComponent, {
-      width: '100%'
-    });
-  }
-
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
       console.log(this.movies);
+      this.getFavoriteMoviesList();
       return this.movies;
     });
+  }
+
+  getFavoriteMoviesList(): void {
+    this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
+      this.favorites = resp.favoriteMovies;
+      console.log(this.favorites);
+      return this.favorites;
+    });
+  }
+
+  openMovieDetails(
+    imagePath: any,
+    title: string,
+    description: string
+  ): void {
+    this.dialog.open(MovieDetailsComponent, {
+      data: {
+        imagePath: imagePath,
+        title: title,
+        description: description
+      },
+      width: '100%'
+    });
+  }
+
+  openDirector(
+    directorName: string,
+    bio: string
+  ): void {
+    this.dialog.open(DirectorViewComponent, {
+      data: {
+        directorName: directorName,
+        bio: bio
+      },
+      width: '100%'
+    });
+  }
+
+  openGenre(
+    genreName: string,
+    description: string
+  ): void {
+    this.dialog.open(GenreViewComponent, {
+      data: {
+        genreName: genreName,
+        description: description
+      },
+      width: '100%'
+    });
+  }
+
+  addFavoriteMovie() {
+    //
+  }
+
+  removeFavoriteMovie() {
+    //
   }
 }
