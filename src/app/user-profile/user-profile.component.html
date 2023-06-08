@@ -1,3 +1,5 @@
+<app-topbar></app-topbar>
+
 <mat-card class="user-profile">
   <mat-card-header class="user-profile-header">
     <mat-card-title>User Profile</mat-card-title>
@@ -6,9 +8,8 @@
   <mat-card-content>
     <div>
       <h3>Your registration details:</h3>
-      <h5>Current User Info</h5>
-      <div>Your name: {{user.userName}}</div>
-      <div>Your email: {{user.email}}</div>
+      <div><strong>Your name: </strong>{{user.userName}}</div>
+      <div><strong>Your email: </strong> {{user.email}}</div>
     </div>
 
     <div>
@@ -38,11 +39,11 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-raised-button (click)="updateProfile()">
+    <button mat-raised-button color="primary" (click)="updateProfile()">
       Update user info
     </button>
 
-    <button mat-raised-button (click)="deleteUser()" class="btn-delete">
+    <button mat-raised-button color="warn" (click)="deleteUser()" class="btn-delete">
       Delete your account
     </button>
 

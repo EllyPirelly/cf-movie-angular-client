@@ -1,8 +1,13 @@
 .movie-director {
   color: #282828;
 
+  & mat-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
   & .btn-close {
-    background-color: #3f51b5;
+    background-color: #B388FF;
     color: #fff;
   }
 }

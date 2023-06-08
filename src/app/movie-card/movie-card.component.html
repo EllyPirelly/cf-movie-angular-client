@@ -1,14 +1,19 @@
+<app-topbar></app-topbar>
+
 <div class="movie-card">
   <mat-card class="movie-card-item" *ngFor="let movie of movies; let i = index">
-    <img src={{movie.imagePath}} alt={{movie.title}} />
 
-    <mat-card-header>
-      <mat-card-title>{{movie.title}}</mat-card-title>
-      <mat-card-subtitle>Directed by: {{movie.directorName}}</mat-card-subtitle>
-    </mat-card-header>
+    <div>
+      <img src={{movie.imagePath}} alt={{movie.title}} />
+
+      <mat-card-header>
+        <mat-card-title>{{movie.title}}</mat-card-title>
+        <mat-card-subtitle>Directed by: {{movie.director.directorName}}</mat-card-subtitle>
+      </mat-card-header>
+    </div>
 
     <mat-card-actions>
-      <button mat-button (click)="openMovieDetails(
+      <button mat-raised-button color="primary" (click)="openMovieDetails(
         movie.imagePath,
         movie.title,
         movie.description,
@@ -18,21 +23,21 @@
         Details
       </button>
 
-      <button mat-button (click)="openDirector(
+      <button mat-raised-button color="primary" (click)="openDirector(
         movie.director.directorName,
         movie.director.bio
       )">
         Director
       </button>
 
-      <button mat-button (click)="openGenre(
+      <button mat-raised-button color="primary" (click)="openGenre(
         movie.genre.genreName,
         movie.genre.description
       )">
         Genre
       </button>
 
-      <button mat-button aria-label="Add to Favorite">
+      <button mat-raised-button color="primary" aria-label="Add to Favorite">
         <mat-icon>favorite_border</mat-icon>
       </button>
     </mat-card-actions>
