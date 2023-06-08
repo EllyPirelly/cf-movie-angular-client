@@ -12,7 +12,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class UserProfileComponent implements OnInit {
 
   user: any = {};
-  movies: any[] = [];
   favoriteMovies: any[] = [];
 
   @Input() updatedUser = {
@@ -61,18 +60,19 @@ export class UserProfileComponent implements OnInit {
         'Are you sure you want to delete your accaunt?'
       )
     ) {
-      this.router.navigate(['welcome']).then(() => {
+      this.fetchApiData.deleteUser().subscribe((result) => {
+        localStorage.clear();
+        this.router.navigate(['welcome']);
         this.snackBar.open(
           'You have successfuly deleted your account.',
           'OK',
           {
             duration: 2000,
           }
-        );
+        )
+
       });
-      this.fetchApiData.deleteUser().subscribe((response) => {
-        localStorage.clear();
-      })
     }
   }
+
 }

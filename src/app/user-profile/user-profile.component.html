@@ -13,6 +13,18 @@
     </div>
 
     <div>
+      <h3>Your favorite movies:</h3>
+      <mat-card *ngFor="let movie of favoriteMovies">
+        <img src={{movie.imagePath}} alt={{movie.title}} />
+
+        <mat-card-header>
+          <mat-card-title>{{movie.title}}</mat-card-title>
+          <mat-card-subtitle>{{movie.director.directorName}}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+
+    <div>
       <h3>Update your information here:</h3>
 
       <form class="user-profile-form">

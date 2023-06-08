@@ -1,16 +1,12 @@
 <mat-toolbar class="main-nav" color="primary">
   <div class="main-nav-container">
-    <div class="main-nav-home">
-      <a routerLink="/">
-        <img class="svg-moviepool" src="../assets/img/svgClapperboard.png" alt="MoviePool">
-        MoviePool
+    <div class="main-nav-movies">
+      <a routerLink="/movies" (click)="toMovies()">
+        All Movies
       </a>
     </div>
 
     <div class="main-nav-links">
-      <a routerLink="/movies" (click)="toMovies()">
-        All Movies
-      </a>
 
       <a routerLink="/profile" aria-label="Go to profile" (click)="toProfile()">
         <mat-icon>person</mat-icon>
