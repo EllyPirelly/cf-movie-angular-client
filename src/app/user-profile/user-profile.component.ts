@@ -12,7 +12,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class UserProfileComponent implements OnInit {
 
   user: any = {};
-  favoriteMovies: any[] = [];
 
   @Input() updatedUser = {
     userName: '',
@@ -51,12 +50,6 @@ export class UserProfileComponent implements OnInit {
       localStorage.setItem('userName', response.userName);
 
       this.getUser();
-    })
-  }
-
-  displayFavoriteMovies(): void {
-    this.fetchApiData.getFavoriteMovies().subscribe((response) => {
-      //
     })
   }
 
