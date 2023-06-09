@@ -54,6 +54,12 @@ export class UserProfileComponent implements OnInit {
     })
   }
 
+  displayFavoriteMovies(): void {
+    this.fetchApiData.getFavoriteMovies().subscribe((response) => {
+      //
+    })
+  }
+
   deleteUser(): void {
     if (
       confirm(
@@ -70,9 +76,7 @@ export class UserProfileComponent implements OnInit {
             duration: 2000,
           }
         )
-
       });
     }
   }
-
 }

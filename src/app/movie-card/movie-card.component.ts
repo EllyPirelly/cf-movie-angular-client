@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+// import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FetchApiDataService } from '../fetch-api-data.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
@@ -14,10 +16,11 @@ import { GenreViewComponent } from '../genre-view/genre-view.component';
 export class MovieCardComponent implements OnInit {
 
   movies: any[] = [];
-  favorites: any[] = [];
+  favoriteMovies: any[] = [];
 
   constructor(
     public fetchApiData: FetchApiDataService,
+    public snackBar: MatSnackBar,
     public dialog: MatDialog,
   ) { }
 
@@ -32,18 +35,9 @@ export class MovieCardComponent implements OnInit {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
       console.log(this.movies);
-      // this.getFavoriteMoviesList();
       return this.movies;
     });
   }
-
-  // getFavoriteMoviesList(): void {
-  //   this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
-  //     this.favorites = resp.favoriteMovies;
-  //     console.log(this.favorites);
-  //     return this.favorites;
-  //   });
-  // }
 
   openMovieDetails(
     imagePath: any,
@@ -90,11 +84,23 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  addFavoriteMovie() {
-    //
+  addFavorite(id: string): void {
+    this.fetchApiData.addFavoriteMovie(id).subscribe((result) => {
+      this.snackBar.open('Movie added', 'OK', {
+        duration: 2000
+      })
+    })
   }
 
-  removeFavoriteMovie() {
-    //
+  isFavorite(id: string): boolean {
+    return this.favoriteMovies.includes(id);
+  }
+
+  removeFavorite(id: string): void {
+    this.fetchApiData.deleteMovie(id).subscribe((result) => {
+      this.snackBar.open('Movie removed', 'OK', {
+        duration: 2000
+      });
+    });
   }
 }

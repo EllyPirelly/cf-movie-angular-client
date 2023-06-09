@@ -123,6 +123,11 @@ export class FetchApiDataService {
       );
   }
 
+  isFavoriteMovie(movieid: string): boolean {
+    const user = JSON.parse(localStorage.getItem('userName') || '{}');
+    return user.favoriteMovies.indexOf(movieid) >= 0;
+  }
+
   // get a specific movie by title
   // '/movies/:title'
   getMovie(title: string): Observable<any> {

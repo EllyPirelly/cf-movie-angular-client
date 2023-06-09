@@ -35,8 +35,13 @@
     }
   }
 
+  & mat-card-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   & mat-card-title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 700;
   }
 
@@ -47,11 +52,19 @@
 
   & mat-card-actions {
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 
-  & button {
+  & .btn-details,
+  & .btn-director,
+  & .btn-genre {
     padding: 0;
+    width: 30%;
+  }
+
+  .btn-heart {
+    background-color: #C6FF00;
+    color: #673AB7;
   }
 
   & mat-icon {

@@ -6,26 +6,29 @@
   </mat-card-header>
 
   <mat-card-content>
-    <div>
-      <h3>Your registration details:</h3>
+    <div class="user-profile-section">
+      <h3>Your registration details</h3>
       <div><strong>Your name: </strong>{{user.userName}}</div>
       <div><strong>Your email: </strong> {{user.email}}</div>
     </div>
 
-    <div>
-      <h3>Your favorite movies:</h3>
+    <div class="user-profile-section">
+      <h3>Your favorite movies</h3>
+      <div>test</div>
       <mat-card *ngFor="let movie of favoriteMovies">
         <img src={{movie.imagePath}} alt={{movie.title}} />
 
         <mat-card-header>
+          <div>test title</div>
+          <div>test director</div>
           <mat-card-title>{{movie.title}}</mat-card-title>
           <mat-card-subtitle>{{movie.director.directorName}}</mat-card-subtitle>
         </mat-card-header>
       </mat-card>
     </div>
 
-    <div>
-      <h3>Update your information here:</h3>
+    <div class="user-profile-section">
+      <h3>Update your information here</h3>
 
       <form class="user-profile-form">
         <mat-form-field>
@@ -57,10 +60,6 @@
 
     <button mat-raised-button color="warn" (click)="deleteUser()" class="btn-delete">
       Delete your account
-    </button>
-
-    <button mat-raised-button mat-dialog-close class="btn-close">
-      Close
     </button>
   </mat-card-actions>
 </mat-card>

@@ -1,4 +1,5 @@
 <app-topbar></app-topbar>
+<!-- <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar> -->
 
 <div class="movie-card">
   <mat-card class="movie-card-item" *ngFor="let movie of movies; let i = index">
@@ -9,11 +10,21 @@
       <mat-card-header>
         <mat-card-title>{{movie.title}}</mat-card-title>
         <mat-card-subtitle>Directed by: {{movie.director.directorName}}</mat-card-subtitle>
+
+        <button *ngIf="!isFavorite(movie._id)" mat-mini-fab class="btn-heart" (click)="addFavorite(movie._id)"
+          matTooltip="Add to favorites">
+          <mat-icon>favorite_border</mat-icon>
+        </button>
+
+        <button *ngIf="isFavorite(movie._id)" mat-mini-fab class="btn-heart" (click)="removeFavorite(movie._id)"
+          matTooltip="Remove from favorites">
+          <mat-icon>favorite</mat-icon>
+        </button>
       </mat-card-header>
     </div>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="openMovieDetails(
+      <button mat-raised-button color="primary" class="btn-details" (click)="openMovieDetails(
         movie.imagePath,
         movie.title,
         movie.description,
@@ -23,22 +34,18 @@
         Details
       </button>
 
-      <button mat-raised-button color="primary" (click)="openDirector(
+      <button mat-raised-button color="primary" class="btn-director" (click)="openDirector(
         movie.director.directorName,
         movie.director.bio
       )">
         Director
       </button>
 
-      <button mat-raised-button color="primary" (click)="openGenre(
+      <button mat-raised-button color="primary" class="btn-genre" (click)="openGenre(
         movie.genre.genreName,
         movie.genre.description
       )">
         Genre
-      </button>
-
-      <button mat-raised-button color="primary" aria-label="Add to Favorite">
-        <mat-icon>favorite_border</mat-icon>
       </button>
     </mat-card-actions>
   </mat-card>

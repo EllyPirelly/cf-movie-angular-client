@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule } from '@angular/forms';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
@@ -59,6 +60,7 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     MatIconModule,
     MatToolbarModule,
+    MatProgressBarModule,
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
