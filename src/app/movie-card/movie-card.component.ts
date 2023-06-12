@@ -29,12 +29,13 @@ export class MovieCardComponent implements OnInit {
   // similar to componentDidMount
   ngOnInit(): void {
     this.getMovies();
+    this.getFavorites();
   }
 
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
-      console.log(this.movies);
+      // console.log(this.movies);
       return this.movies;
     });
   }
@@ -84,12 +85,20 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  getFavorites(): void {
+    this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
+      this.favoriteMovies = resp;
+      return this.favoriteMovies;
+    });
+  }
+
   addFavorite(id: string): void {
     this.fetchApiData.addFavoriteMovie(id).subscribe((result) => {
       this.snackBar.open('Movie added', 'OK', {
         duration: 2000
-      })
-    })
+      });
+      this.ngOnInit();
+    });
   }
 
   isFavorite(id: string): boolean {
@@ -101,6 +110,7 @@ export class MovieCardComponent implements OnInit {
       this.snackBar.open('Movie removed', 'OK', {
         duration: 2000
       });
+      this.ngOnInit();
     });
   }
 }

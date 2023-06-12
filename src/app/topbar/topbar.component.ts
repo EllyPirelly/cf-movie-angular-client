@@ -24,6 +24,7 @@ export class TopbarComponent {
   }
 
   logOut(): void {
+    localStorage.clear();
     this.router.navigate(['welcome']);
     localStorage.clear();
   }

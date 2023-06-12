@@ -24,7 +24,7 @@ export class FetchApiDataService {
   // post a user / sign up
   // '/users'
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
+    // console.log(userDetails);
     return this.http
       .post(apiUrl + 'users', userDetails)
       .pipe(
