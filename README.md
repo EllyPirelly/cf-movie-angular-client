@@ -5,7 +5,8 @@ This responsive MoviePool App in Angular has been built analogue to previously b
 <br>
 This MoviePool App in Angular has been built as a task for Achievement 6 in [Career Foundry's Full-Stack Web Development Program](https://careerfoundry.com/en/courses/become-a-web-developer/).
 
-TODO: screenshot
+![Screenshot of Welcome View](/src/assets/img/screenshots/client-angular-1.png)
+![Screenshot of Movie View](/src/assets/img/screenshots/client-angular-2.png)
 
 ### Technical requirements
 - [Angular](https://angular.io/)
@@ -31,7 +32,6 @@ The app must
     - as well as a (toggle) button to add/remove from favorite
 - have Angular Router implemented to enable change between Welcome View, Movie View and Profile View
 
-
 ### Languages, Libraries, Frameworks, Tools
 - Angular, Angular CLI (16.0.3), Angular Material
 - TypeScript
@@ -42,6 +42,7 @@ The app must
 - `@angular/cli`
 
 #### Dependencies
+- `@angular/router`
 - `@angular/material`
 
 #### Dev Dependencies
@@ -52,7 +53,6 @@ The app must
 - clone the repo
 - `cd` into project
 - `npm install`
-
 - `ng serve` - automatically rebuilds the application and reloads the page when you change any of the source files
 - `ng serve --open` - automatically rebuilds the application and reloads the page when you change any of the source files and opens the application in a new tab in your browser `http://localhost:4200/`
 
