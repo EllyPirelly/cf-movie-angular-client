@@ -1,28 +1,45 @@
 # MoviePool App in Angular
 
 ### What is this about?
-MoviePool App in Angular, developed based on what has first been developed in [MoviePool App](https://github.com/EllyPirelly/cf-movie-client). TODO: better intro.
+This responsive MoviePool App in Angular has been built analogue to previously built [MoviePool App in React](https://github.com/EllyPirelly/cf-movie-client). It is for movie lovers that want to be able to access information about movies and - once signed up - be able to view, update, delete their account. It's the client-side to the [RESTful Movie API](https://github.com/EllyPirelly/cf-movie-api).
 <br>
 This MoviePool App in Angular has been built as a task for Achievement 6 in [Career Foundry's Full-Stack Web Development Program](https://careerfoundry.com/en/courses/become-a-web-developer/).
 
 TODO: screenshot
 
 ### Technical requirements
-- Angular
-- [Angular CLI](https://angular.io/cli)
+- [Angular](https://angular.io/)
+- [Angular CLI](https://github.com/angular/angular-cli)
 - TypeScript
+- [Angular Material](https://material.angular.io/)
+- hosted on GitHub pages
+- implemented user registration and user login via forms
+- Typedoc for comments
+- JSDoc for technical documentation
 
 ### Features
-- TODO
+The app must
+- have a Welcome View, where users will be able to either sign up or log in
+- have a User Profile View, where users will be able to view / edit their profile
+- have a Movie View, showing all movies once the user is authenticated
+- have a Movie Card Component
+  - this component will be rendered ñ time on the Movie View, depending on the amount of movies present in the database
+  - the component will have buttons to - on click - open
+    - a dialogue with details about the Movie Genre
+    - a dialogue with details about the Director
+    - a dialogue with details about the Movie
+    - as well as a (toggle) button to add/remove from favorite
+- have Angular Router implemented to enable change between Welcome View, Movie View and Profile View
+
 
 ### Languages, Libraries, Frameworks, Tools
-- Angular, Angular CLI
+- Angular, Angular CLI (16.0.3), Angular Material
 - TypeScript
 - HTML
 - SCSS
 
 #### Global Dependencies
-- `@angular/cli` - [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
+- `@angular/cli`
 
 #### Dependencies
 - `@angular/material`
@@ -39,17 +56,14 @@ TODO: screenshot
 - `ng serve` - automatically rebuilds the application and reloads the page when you change any of the source files
 - `ng serve --open` - automatically rebuilds the application and reloads the page when you change any of the source files and opens the application in a new tab in your browser `http://localhost:4200/`
 
-## Deployment to GitHub pages
-TODO: Sort this later
+## Heads-up: Deployment to GitHub pages
 - commands to use with angular cli after installing `angular-cli-ghpages` do not work
+- code needs to be build manually, run
+```
+ng build --output-path docs --base-href /cf-movie-angular-client/
+```
 - follow: https://angular.io/guide/deployment#deploy-to-github-pages and https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source
-- stuff at the moment needs to be done manually
-- run `ng build --output-path docs --base-href /cf-movie-angular-client/` to manually trigger build
-- ALWAYS keep an eye on what's happening with `docs/404.html` do not let the build delete that file
-- add, commit, push stuff
-- improve this as soon as you figure out why workflow doesn't work
-
-TODO: sort what's below
+- add, commit, push, deploy
 
 ## Code scaffolding
 
