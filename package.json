@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "typedoc": "typedoc --out docstypedoc src/main.ts"
+    "typedoc": "typedoc --out docstypedoc"
   },
   "private": true,
   "dependencies": {

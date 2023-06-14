@@ -57,7 +57,7 @@ The app must
 - `ng serve --open` - automatically rebuilds the application and reloads the page when you change any of the source files and opens the application in a new tab in your browser `http://localhost:4200/`
 
 ## Heads-up: Deployment to GitHub pages
-- commands to use with angular cli after installing `angular-cli-ghpages` do not work
+- angular cli commands do not work after install of `angular-cli-ghpages`
 - code needs to be build manually, run
 ```
 ng build --output-path docs --base-href /cf-movie-angular-client/
@@ -65,10 +65,31 @@ ng build --output-path docs --base-href /cf-movie-angular-client/
 - follow: https://angular.io/guide/deployment#deploy-to-github-pages and https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source
 - add, commit, push, deploy
 
-## Typedoc
-- `"typedoc": "typedoc --out docstypedoc src/main.ts"` in `package.json` `scripts` enables to run `npm run typedoc`
-  - recommended directory `docs` needed to be changed to `docstypedoc` (basically any name) as `docs` is already used for building files for github pages
-- sources https://www.vojtechruzicka.com/documenting-angular-apps-with-typedoc-compodoc-and-angulardoc/
+## Heads-up: Typedoc config (note to myself)
+- recommended directory `docs` for typedoc does not apply in this case as `docs` is already used for building files for github pages
+- in `tsconfig.json` add config like follows
+```
+  "typedocOptions": {
+    "entryPoints": [
+      "src/main.ts",
+      "src/app/fetch-api-data.service.ts",
+      "src/app/welcome-page/welcome-page.component.ts",
+      "src/app/user-registration-form/user-registration-form.component.ts",
+      "src/app/user-login-form/user-login-form.component.ts",
+      "src/app/user-profile/user-profile.component.ts",
+      "src/app/movie-card/movie-card.component.ts",
+      "src/app/topbar/topbar.component.ts",
+    ],
+    "out": "docstypedoc"
+  }
+```
+- in `package.json`, `scripts` add following which will enable to run `npm run typedoc`
+```
+"typedoc": "typedoc --out docstypedoc src/main.ts"
+```
+
+### Typedoc Sources
+- https://www.vojtechruzicka.com/documenting-angular-apps-with-typedoc-compodoc-and-angulardoc/
 - https://www.npmjs.com/package/typedoc
 - https://typedoc.org/guides/installation/
 - https://typedoc.org/api/
