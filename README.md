@@ -66,7 +66,12 @@ ng build --output-path docs --base-href /cf-movie-angular-client/
 - add, commit, push, deploy
 
 ## Typedoc
-- TODO
+- `"typedoc": "typedoc --out docstypedoc src/main.ts"` in `package.json` `scripts` enables to run `npm run typedoc`
+  - recommended directory `docs` needed to be changed to `docstypedoc` (basically any name) as `docs` is already used for building files for github pages
+- sources https://www.vojtechruzicka.com/documenting-angular-apps-with-typedoc-compodoc-and-angulardoc/
+- https://www.npmjs.com/package/typedoc
+- https://typedoc.org/guides/installation/
+- https://typedoc.org/api/
 
 ## Code scaffolding
 
