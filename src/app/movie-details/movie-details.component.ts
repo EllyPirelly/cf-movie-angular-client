@@ -11,6 +11,7 @@ export class MovieDetailsComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
+
     public data: {
       imagePath: any;
       title: string;
@@ -20,5 +21,6 @@ export class MovieDetailsComponent implements OnInit {
     }
   ) { }
 
+  // called once the component has recieved all its inputs
   ngOnInit(): void { }
 }

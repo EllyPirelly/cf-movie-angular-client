@@ -15,7 +15,7 @@ This MoviePool App in Angular has been built as a task for Achievement 6 in [Car
 - [Angular Material](https://material.angular.io/)
 - hosted on GitHub pages
 - implemented user registration and user login via forms
-- Typedoc for technical documentation
+- [Typedoc](https://typedoc.org/api/) for technical documentation
 
 ### Features
 The app must
@@ -64,6 +64,9 @@ ng build --output-path docs --base-href /cf-movie-angular-client/
 ```
 - follow: https://angular.io/guide/deployment#deploy-to-github-pages and https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source
 - add, commit, push, deploy
+
+## Typedoc
+- TODO
 
 ## Code scaffolding
 

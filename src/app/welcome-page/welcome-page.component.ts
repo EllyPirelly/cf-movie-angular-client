@@ -11,20 +11,24 @@ import { UserLoginFormComponent } from '../user-login-form/user-login-form.compo
 
 export class WelcomePageComponent implements OnInit {
 
-  // opens dialog on sign-up button click
   constructor(public dialog: MatDialog) { }
 
+  // called once the component has recieved all its inputs
   ngOnInit(): void {
   }
 
-  // opens dialog on sign-up button click
+  /**
+   * opens dialog on sign-up button click
+   */
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
       width: '100%'
     });
   }
 
-  // opens dialog on log-in button click
+  /**
+   * opens dialog on log-in button click
+   */
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
       width: '100%'
