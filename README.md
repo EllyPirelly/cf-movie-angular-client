@@ -15,8 +15,7 @@ This MoviePool App in Angular has been built as a task for Achievement 6 in [Car
 - [Angular Material](https://material.angular.io/)
 - hosted on GitHub pages
 - implemented user registration and user login via forms
-- Typedoc for comments
-- JSDoc for technical documentation
+- Typedoc for technical documentation
 
 ### Features
 The app must
@@ -48,6 +47,7 @@ The app must
 #### Dev Dependencies
 - `@angular/cli` and all packages coming with this
 - `angular-cli-ghpages` - to deploy on GitHub pages branch `gh-pages`
+- `typedoc` - for technical documentation
 
 ## How to run this?
 - clone the repo
