@@ -25,7 +25,7 @@ export class FetchApiDataService {
   * user registration for new users
   * @service POST request to '/users'
   * @param userDetails
-  * @returns JSON object holding user data
+  * @returns an object holding user data
   */
   public userRegistration(userDetails: any): Observable<any> {
     return this.http
@@ -39,7 +39,7 @@ export class FetchApiDataService {
   * user login for existing users
   * @service POST request to '/login'
   * @param userDetails
-  * @returns JSON object holding user data
+  * @returns an object holding user data
   */
   public userLogin(userDetails: any): Observable<any> {
     return this.http
@@ -51,10 +51,10 @@ export class FetchApiDataService {
   }
 
   /**
-  * add favorite movie to user's favorite movies
-  * @service POST request to '/users/:userName/movies/:movieid'
+  * add a favorite movie to user's favorite movies by movieid
+  * @service POST request to '/users/{userName}/movies/{movieid}'
   * @param movieid
-  * @returns JSON object holding user's favorite movies with newly added movie
+  * @returns an object holding user's favorite movies including newly added movie(s)
   */
   addFavoriteMovie(movieid: string): Observable<any> {
     return this.http
@@ -76,7 +76,7 @@ export class FetchApiDataService {
   /**
   * get all movies
   * @service GET request to '/movies'
-  * @returns JSON object holding all movies data
+  * @returns an object holding all movies data
   */
   getAllMovies(): Observable<any> {
     return this.http
@@ -93,8 +93,8 @@ export class FetchApiDataService {
 
   /**
   * get a specific user by userName
-  * @service GET request to '/users/:userName'
-  * @returns JSON object holding specific user data
+  * @service GET request to '/users/{userName}'
+  * @returns an object holding data of a specific user
   */
   getUser(): Observable<any> {
     return this.http
@@ -110,9 +110,9 @@ export class FetchApiDataService {
   }
 
   /**
-  * get favorite movies
-  * @service GET request to '/users/:userName'
-  * @returns JSON object holding user's favorite movies
+  * get favorite movies by userName
+  * @service GET request to '/users/{userName}'
+  * @returns an object holding user's favorite movies
   */
   getFavoriteMovies(): Observable<any> {
     return this.http
@@ -135,9 +135,9 @@ export class FetchApiDataService {
 
   /**
   * get a specific movie by title
-  * @service GET request to '/movies/:title'
+  * @service GET request to '/movies/{title}'
   * @param title
-  * @returns JSON object holding specific movie data
+  * @returns an object holding data of a specific movie
   */
   getMovie(title: string): Observable<any> {
     return this.http
@@ -154,9 +154,9 @@ export class FetchApiDataService {
 
   /**
   * get a specific movie genre by genreName
-  * @service GET request to '/movies/genres/:genreName'
+  * @service GET request to '/movies/genres/{genreName}'
   * @param genreName
-  * @returns JSON object holding specific genre data
+  * @returns an object holding data of a specific movie genre
   */
   getGenre(genreName: string): Observable<any> {
     return this.http
@@ -173,9 +173,9 @@ export class FetchApiDataService {
 
   /**
   * get a specific director by directorName
-  * @service GET request to '/movies/directors/:directorName'
+  * @service GET request to '/movies/directors/{directorName}'
   * @param directorName
-  * @returns JSON object holding specific director data
+  * @returns an object holding data of a specific director
   */
   getDirector(directorName: string): Observable<any> {
     return this.http
@@ -191,10 +191,10 @@ export class FetchApiDataService {
   }
 
   /**
-  * edit user
-  * @service PUT request to '/users/:userName'
+  * edit / update user by useName
+  * @service PUT request to '/users/{userName}'
   * @param updatedUser
-  * @returns JSON object holding updated user data
+  * @returns an object holding updated data of a specific user
   */
   updateUser(updatedUser: any): Observable<any> {
     return this.http
@@ -210,9 +210,9 @@ export class FetchApiDataService {
   }
 
   /**
-  * delete user
-  * @service DELETE request to '/users/:userName'
-  * @returns message; redirect to welcome page
+  * delete a user by userName
+  * @service DELETE request to '/users/{userName}'
+  * @returns a message and redirects to welcome page
   */
   deleteUser(): Observable<any> {
     return this.http
@@ -228,10 +228,10 @@ export class FetchApiDataService {
   }
 
   /**
-  * delete movie off of user's favorite movies
-  * @service DELETE request to '/users/:userName/movies/:movieid'
+  * delete a favorite movie off of user's favorite movies by movieid
+  * @service DELETE request to '/users/{userName}/movies/{movieid}'
   * @param movieid
-  * @returns JSON object holding user's favorite movies
+  * @returns an object holding data of user's favorite movies
   */
   deleteMovie(movieid: string): Observable<any> {
     return this.http
